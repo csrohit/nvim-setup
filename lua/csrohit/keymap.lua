@@ -23,10 +23,10 @@ nmap('<leader>nh',':nohlsearch<CR>')
 nmap('<leader>e', ':NvimTreeToggle<CR>')
 
 -- navigating between buffers
-nmap('<TAB>', ':bn<CR>')
+nmap('<TAB>', ':bn<CR>', {desc = 'Switch buffers'})
 
 -- navigating between window splits
-nmap('<C-h>', '<C-w>h')
+nmap('<C-h>', '<C-w>h', { desc = 'Left pane' })
 nmap('<C-j>', '<C-w>j')
 nmap('<C-k>', '<C-w>k')
 nmap('<C-l>', '<C-w>l')
