@@ -22,12 +22,17 @@ vim.g.mapleader = ' '
 nmap('<leader>nh',':nohlsearch<CR>')
 nmap('<leader>e', ':NvimTreeToggle<CR>')
 
+-- navigating between buffers
+nmap('<TAB>', ':bn<CR>')
 
 -- navigating between window splits
 nmap('<C-h>', '<C-w>h')
 nmap('<C-j>', '<C-w>j')
 nmap('<C-k>', '<C-w>k')
 nmap('<C-l>', '<C-w>l')
+
+-- toggle current split window maximize
+nmap('<leader>sm', ':MaximizerToggle<CR>')
 
 -- indentation
 vmap('<', '<gv')
