@@ -19,10 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
-require('lazy').setup({
-
-    { import = 'csrohit.plugins' }
-})
+require('lazy').setup('csrohit.plugins')
 
 -- stup for nvim-
 vim.g.loaded_netrw = 1
