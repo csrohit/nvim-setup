@@ -3,7 +3,8 @@ return {
     'lewis6991/gitsigns.nvim',
     config = function()
         -- add configuration after loading
-        require('gitsigns').setup {
+        local gs = require('gitsigns')
+        gs.setup {
             signs = {
                 add          = { text = '+' },
                 change       = { text = '~' },
@@ -34,7 +35,6 @@ return {
             status_formatter = nil, -- Use default
             max_file_length = 40000, -- Disable if file is longer than this (in lines)
             preview_config = {
-            
                 -- Options passed to nvim_open_win
                 border = 'single',
                 style = 'minimal',
@@ -46,5 +46,21 @@ return {
                 enable = false
             },
         }
+        Map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
+        Map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
+
+        nmap('<leader>hS', gs.stage_buffer)
+        nmap('<leader>ha', gs.stage_hunk)
+        nmap('<leader>hu', gs.undo_stage_hunk)
+        nmap('<leader>hR', gs.reset_buffer)
+        nmap('<leader>hp', gs.preview_hunk)
+        nmap('<leader>hb', function() gs.blame_line{full=true} end)
+        nmap('<leader>tb', gs.toggle_current_line_blame)
+        nmap('<leader>hd', gs.diffthis)
+        nmap('<leader>hD', function() gs.diffthis('~') end)
+        nmap('<leader>td', gs.toggle_deleted)
+
+        -- Text object
+        Map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
     end
 }
