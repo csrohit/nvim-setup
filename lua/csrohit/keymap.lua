@@ -23,25 +23,25 @@ vim.g.mapleader = ' '
 vim.g.localmapleader = ' '
 
 -- remove highlighted search results
-nmap('<leader>nh',':nohlsearch<CR>')
-nmap('<leader>e', ':NvimTreeToggle<CR>')
+nmap('<leader>nh',':nohlsearch<CR>', { desc = '[NH] Disable search highlights'}) 
+nmap('<leader>e', ':NvimTreeToggle<CR>', { desc = '[E] Toggle file manager' })
 
 -- navigating between buffers
-nmap('<TAB>', ':bn<CR>', {desc = 'Switch buffers'})
-nmap('S-TAB', ':bp<CR>')
+nmap('<TAB>', ':bn<CR>', { desc = 'Next buffer' })
+nmap('S-TAB', ':bp<CR>', { desc = 'Previous buffer' })
 
 -- navigating between window splits
 nmap('<C-h>', '<C-w>h', { desc = 'Left pane' })
-nmap('<C-j>', '<C-w>j')
-nmap('<C-k>', '<C-w>k')
-nmap('<C-l>', '<C-w>l')
+nmap('<C-j>', '<C-w>j', { desc = 'Bottom pane' })
+nmap('<C-k>', '<C-w>k', { desc = 'Top pane' })
+nmap('<C-l>', '<C-w>l', { desc = 'Right pane' })
 
 -- toggle current split window maximize
-nmap('<leader>sm', ':MaximizerToggle<CR>')
+nmap('<leader>tm', ':MaximizerToggle<CR>', { desc = '[TM] Toggle maximize current buffer' })
 
 -- indentation
 vmap('<', '<gv')
 vmap('>', '>gv')
 
 -- restart lsp server (not on youtube nvim video)
-nmap("<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+nmap("<leader>rs", ":LspRestart<CR>", { desc = '[R] Restart LSP server' }) -- mapping to restart lsp if necessary
