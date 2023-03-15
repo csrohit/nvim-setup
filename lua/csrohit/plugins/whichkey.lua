@@ -4,5 +4,8 @@ return {
     opts = {},
     config = function()
         -- add configuration here
+        require('which-key').setup({
+
+          })
     end
   }
