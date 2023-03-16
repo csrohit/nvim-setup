@@ -31,10 +31,10 @@ Nmap('<TAB>', ':bn<CR>', { desc = 'Next buffer' })
 Nmap('S-TAB', ':bp<CR>', { desc = 'Previous buffer' })
 
 -- navigating between window splits
-Nmap('<C-h>', '<C-w>h', { desc = 'Left pane' })
-Nmap('<C-j>', '<C-w>j', { desc = 'Bottom pane' })
-Nmap('<C-k>', '<C-w>k', { desc = 'Top pane' })
-Nmap('<C-l>', '<C-w>l', { desc = 'Right pane' })
+Nmap('<C-h>', '<C-\\><C-N><C-w>h', { desc = 'Left pane' })
+Nmap('<C-j>', '<C-\\><C-N><C-w>j', { desc = 'Bottom pane' })
+Nmap('<C-k>', '<C-\\><C-N><C-w>k', { desc = 'Top pane' })
+Nmap('<C-l>', '<C-\\><C-N><C-w>l', { desc = 'Right pane' })
 
 -- toggle current split window maximize
 Nmap('<leader>tm', ':MaximizerToggle<CR>', { desc = '[TM] Toggle maximize current buffer' })
@@ -132,3 +132,9 @@ Nmap("<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Floating terminal
 Map({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
+
+--terminal
+Nmap('<C-`>', ':vsplit term://zsh<CR>', { desc = 'Open terminal' })
+Map('t', '<ESC>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
+
