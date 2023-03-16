@@ -9,12 +9,12 @@ function Map(mode, lhs, rhs, opts)
 end
 
 -- mapping for normal mode
-function nmap(lhs, rhs, opts)
+function Nmap(lhs, rhs, opts)
     Map('n', lhs, rhs, opts)
 end
 
 -- mapping for visual mode
-function vmap(lhs, rhs, opts)
+function Vmap(lhs, rhs, opts)
     Map('v', lhs, rhs, opts)
 end
 
@@ -23,25 +23,25 @@ vim.g.mapleader = ' '
 vim.g.localmapleader = ' '
 
 -- remove highlighted search results
-nmap('<leader>nh',':nohlsearch<CR>', { desc = '[NH] Disable search highlights'}) 
-nmap('<leader>e', ':NvimTreeToggle<CR>', { desc = '[E] Toggle file manager' })
+Nmap('<leader>nh',':nohlsearch<CR>', { desc = '[NH] Disable search highlights'})
+Nmap('<leader>e', ':NvimTreeToggle<CR>', { desc = '[E] Toggle file manager' })
 
 -- navigating between buffers
-nmap('<TAB>', ':bn<CR>', { desc = 'Next buffer' })
-nmap('S-TAB', ':bp<CR>', { desc = 'Previous buffer' })
+Nmap('<TAB>', ':bn<CR>', { desc = 'Next buffer' })
+Nmap('S-TAB', ':bp<CR>', { desc = 'Previous buffer' })
 
 -- navigating between window splits
-nmap('<C-h>', '<C-w>h', { desc = 'Left pane' })
-nmap('<C-j>', '<C-w>j', { desc = 'Bottom pane' })
-nmap('<C-k>', '<C-w>k', { desc = 'Top pane' })
-nmap('<C-l>', '<C-w>l', { desc = 'Right pane' })
+Nmap('<C-h>', '<C-w>h', { desc = 'Left pane' })
+Nmap('<C-j>', '<C-w>j', { desc = 'Bottom pane' })
+Nmap('<C-k>', '<C-w>k', { desc = 'Top pane' })
+Nmap('<C-l>', '<C-w>l', { desc = 'Right pane' })
 
 -- toggle current split window maximize
-nmap('<leader>tm', ':MaximizerToggle<CR>', { desc = '[TM] Toggle maximize current buffer' })
+Nmap('<leader>tm', ':MaximizerToggle<CR>', { desc = '[TM] Toggle maximize current buffer' })
 
 -- indentation
-vmap('<', '<gv')
-vmap('>', '>gv')
+Vmap('<', '<gv')
+Vmap('>', '>gv')
 
 -- restart lsp server (not on youtube nvim video)
-nmap("<leader>rs", ":LspRestart<CR>", { desc = '[R] Restart LSP server' }) -- mapping to restart lsp if necessary
+Nmap("<leader>rs", ":LspRestart<CR>", { desc = '[R] Restart LSP server' }) -- mapping to restart lsp if necessary

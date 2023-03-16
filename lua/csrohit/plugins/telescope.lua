@@ -29,22 +29,22 @@ return {
 
         local builtin = require('telescope.builtin')
         -- See `:help telescope.builtin`
-        nmap('<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-        nmap('<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-        nmap('<leader>ff', builtin.find_files, { desc = '[F], find files' })
-        nmap('<leader>fg', builtin.live_grep, { desc = '[G] Find in workspace' })
-        nmap('<leader>fb', builtin.buffers, { desc = '[B] Find in open buffers' })
-        nmap('<leader>fd', builtin.diagnostics, { desc = '[D] Find diagnostics' })
-        nmap('<leader>fw', builtin.grep_string, { desc = '[W] Find current word in workspace' })
-        nmap('<leader>fh', builtin.help_tags, { desc = '[H] Find help' })
+        Nmap('<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
+        Nmap('<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+        Nmap('<leader>ff', builtin.find_files, { desc = '[F], find files' })
+        Nmap('<leader>fg', builtin.live_grep, { desc = '[G] Find in workspace' })
+        Nmap('<leader>fb', builtin.buffers, { desc = '[B] Find in open buffers' })
+        Nmap('<leader>fd', builtin.diagnostics, { desc = '[D] Find diagnostics' })
+        Nmap('<leader>fw', builtin.grep_string, { desc = '[W] Find current word in workspace' })
+        Nmap('<leader>fh', builtin.help_tags, { desc = '[H] Find help' })
 
         -- telescope git commands (not on youtube nvim video)
-        nmap("<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = '[C] List git commits' }) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-        nmap("<leader>gfc", "<cmd>Telescope git_bcommits<cr>", { desc = '[FC] List git commits for current file' }) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-        nmap("<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = '[B] List git branches' }) -- list git branches (use <cr> to checkout) ["gb" for git branch]
-        nmap("<leader>gs", "<cmd>Telescope git_status<cr>", { desc = '[S] Show git status' }) -- list current changes per file with diff preview ["gs" for git status]
+        Nmap("<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = '[C] List git commits' }) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+        Nmap("<leader>gfc", "<cmd>Telescope git_bcommits<cr>", { desc = '[FC] List git commits for current file' }) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+        Nmap("<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = '[B] List git branches' }) -- list git branches (use <cr> to checkout) ["gb" for git branch]
+        Nmap("<leader>gs", "<cmd>Telescope git_status<cr>", { desc = '[S] Show git status' }) -- list current changes per file with diff preview ["gs" for git status]
 
-        nmap('<leader>/', function()
+        Nmap('<leader>/', function()
             builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
                 winblend = 10,
                 previewer = false,
