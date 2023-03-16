@@ -61,7 +61,7 @@ return {
         local mason_lsp = require('mason-lspconfig')
 
         mason_lsp.setup {
-            ensure_installed = { "lua_ls", "clangd" },
+            ensure_installed = { "lua_ls", "clangd", "pyright", 'tsserver', 'gopls' },
         }
 
         -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
