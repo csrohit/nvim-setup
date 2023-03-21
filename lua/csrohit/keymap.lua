@@ -28,7 +28,8 @@ Nmap('<leader>e', ':NvimTreeToggle<CR>', { desc = '[E] Toggle file manager' })
 
 -- navigating between buffers
 Nmap('<TAB>', ':bn<CR>', { desc = 'Next buffer' })
-Nmap('S-TAB', ':bp<CR>', { desc = 'Previous buffer' })
+Nmap('<S-TAB>', ':bp<CR>', { desc = 'Previous buffer' })
+Nmap('<leader>bd', ':bd<CR>', { desc = 'Close current buffer' })
 
 -- navigating between window splits
 Nmap('<C-h>', '<C-\\><C-N><C-w>h', { desc = 'Left pane' })
@@ -42,6 +43,11 @@ Nmap('<leader>tm', ':MaximizerToggle<CR>', { desc = '[TM] Toggle maximize curren
 -- indentation
 Vmap('<', '<gv')
 Vmap('>', '>gv')
+
+
+Vmap('<A-j>', ':m +1<CR>', { desc = 'Move line down' })
+Vmap('<A-k>', ':m -1<CR>', { desc = 'Move line up' })
+
 
 -- restart lsp server (not on youtube nvim video)
 Nmap("<leader>rs", ":LspRestart<CR>", { desc = '[R] Restart LSP server' }) -- mapping to restart lsp if necessary
@@ -67,10 +73,10 @@ Nmap("gr", "<cmd>Lspsaga rename ++project<CR>")
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-Nmap("gd", "<cmd>Lspsaga peek_definition<CR>")
+-- Nmap("gd", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to definition
--- Nmap("gd", "<cmd>Lspsaga goto_definition<CR>")
+ Nmap("gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
