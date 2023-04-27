@@ -8,13 +8,14 @@ vim.o.tabstop = 4
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.autoindent = 4
+vim.o.softtabstop = 4
 
 -- disable line wrapping
 vim.o.wrap = false
 
 -- appearance
-vim.o.background = 'dark'
-vim.o.signcolumn = 'yes'
+vim.o.background = "dark"
+vim.o.signcolumn = "yes"
 
 -- window splitting
 vim.o.splitright = true
@@ -27,12 +28,12 @@ vim.o.hlsearch = true
 vim.wo.number = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = "unnamedplus"
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -45,7 +46,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -53,7 +54,15 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menu,menuone,noselect'
+vim.o.completeopt = "menu,menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
+})
