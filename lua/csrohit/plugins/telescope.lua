@@ -26,6 +26,7 @@ return {
 	},
 	config = function()
 		pcall(require("telescope").load_extension, "fzf")
+		pcall(require("telescope").load_extension, "file_browser")
 
 		local builtin = require("telescope.builtin")
 		-- See `:help telescope.builtin`
@@ -33,10 +34,10 @@ return {
 		Nmap("<leader><space>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 		Nmap("<leader>ff", builtin.find_files, { desc = "[F], find files" })
 		Nmap("<leader>fg", builtin.live_grep, { desc = "[G] Find in workspace" })
-		Nmap("<leader>fb", builtin.buffers, { desc = "[B] Find in open buffers" })
 		Nmap("<leader>fd", builtin.diagnostics, { desc = "[D] Find diagnostics" })
 		Nmap("<leader>fw", builtin.grep_string, { desc = "[W] Find current word in workspace" })
 		Nmap("<leader>fh", builtin.help_tags, { desc = "[H] Find help" })
+		Nmap("<leader>fb", "<cmd>Telescope file_browser<cr>", { desc = "[B] File Browser" })
 
 		-- telescope git commands (not on youtube nvim video)
 		Nmap("<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "[C] List git commits" }) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
