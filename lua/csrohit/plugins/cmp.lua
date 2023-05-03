@@ -9,6 +9,7 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim",
+        "hrsh7th/cmp-nvim-lsp-signature-help"
 	},
 	name = "cmp",
 	config = function()
@@ -16,7 +17,7 @@ return {
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 		local neogen = require("neogen")
-
+    
 		require("luasnip/loaders/from_vscode").lazy_load()
 		cmp.setup({
 			-- setup snippets
@@ -61,6 +62,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "path" },
 				{ name = "buffer" },
+				{ name = "nvim_lsp_signature_help" },
 			},
 			formatting = {
 				format = lspkind.cmp_format({
