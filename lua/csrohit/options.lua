@@ -10,6 +10,11 @@ vim.o.shiftwidth = 4
 vim.o.autoindent = 4
 vim.o.softtabstop = 4
 
+
+-- display spaces
+vim.o.listchars="eol:¬,tab:>␣,trail:~,extends:>,precedes:<,space:·"
+-- vim.o.list=true
+
 -- disable line wrapping
 vim.o.wrap = false
 
@@ -66,3 +71,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
 	pattern = "*",
 })
+

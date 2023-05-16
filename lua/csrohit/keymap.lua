@@ -81,30 +81,30 @@ Nmap("gh", "<cmd>Lspsaga lsp_finder<CR>", { desc = "LspSaga finder" })
 Map({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "LspSaga Code Action" })
 
 -- Rename all occurrences of the hovered word for the entire file
-Nmap("gr", "<cmd>Lspsaga rename<CR>")
+Nmap("gr", "<cmd>Lspsaga rename<CR>", { desc = "LspSaga rename symbol"})
 
 -- Rename all occurrences of the hovered word for the selected files
-Nmap("gr", "<cmd>Lspsaga rename ++project<CR>")
+Nmap("<leader>gr", "<cmd>Lspsaga rename ++project<CR>", { desc = "Lspsaga rename symbol project wide" })
 
 -- Peek definition
 -- You can edit the file containing the definition in the floating window
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-Nmap("gd", "<cmd>Lspsaga peek_definition<CR>")
+Nmap("<leader>gd", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to definition
-Nmap("<leader>gd", "<cmd>Lspsaga goto_definition<CR>")
+Nmap("gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-Nmap("gt", "<cmd>Lspsaga peek_type_definition<CR>")
+Nmap("<leader>gt", "<cmd>Lspsaga peek_type_definition<CR>")
 
 -- Go to type definition
-Nmap("<leader>gt", "<cmd>Lspsaga goto_type_definition<CR>")
+Nmap("gt", "<cmd>Lspsaga goto_type_definition<CR>")
 
 -- Show line diagnostics
 -- You can pass argument ++unfocus to
