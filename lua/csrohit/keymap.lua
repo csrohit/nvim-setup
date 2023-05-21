@@ -91,7 +91,7 @@ Nmap("<leader>gr", "<cmd>Lspsaga rename ++project<CR>", { desc = "Lspsaga rename
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-Nmap("<leader>gd", "<cmd>Lspsaga peek_definition<CR>")
+Nmap("gp", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to definition
 Nmap("gd", "<cmd>Lspsaga goto_definition<CR>")
