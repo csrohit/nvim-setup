@@ -84,7 +84,7 @@ Map({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "LspSag
 Nmap("gr", "<cmd>Lspsaga rename<CR>", { desc = "LspSaga rename symbol"})
 
 -- Rename all occurrences of the hovered word for the selected files
-Nmap("<leader>gr", "<cmd>Lspsaga rename ++project<CR>", { desc = "Lspsaga rename symbol project wide" })
+Nmap("gR", "<cmd>Lspsaga rename ++project<CR>")
 
 -- Peek definition
 -- You can edit the file containing the definition in the floating window
