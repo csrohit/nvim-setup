@@ -41,9 +41,9 @@ local on_attach = function(client, bufnr)
 
     -- typescript specific keymaps (e.g. rename file and update imports)
     if client.name == "tsserver" then
-        Nmap("<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
+        Nmap("<leader>rf", ":TypescriptRenameFile<CR>")      -- rename file and update imports
         Nmap("<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-        Nmap("<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+        Nmap("<leader>ru", ":TypescriptRemoveUnused<CR>")    -- remove unused variables (not in youtube nvim video)
     end
 
     Nmap("<leader>lf", function()
@@ -121,6 +121,13 @@ return {
                 })
             end,
         })
+        local nvim_lsp = require('lspconfig')
+        nvim_lsp.clangd.setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            cmd = { "clangd", "--header-insertion=never"},
+            -- Other configuration options for clangd setup
+        }
 
         require("lspconfig")
     end,
