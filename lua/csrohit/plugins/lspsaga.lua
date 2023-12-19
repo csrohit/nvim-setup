@@ -1,7 +1,7 @@
 --File: lua/csrohit/plugins/lspsaga.lua
 
 return {
-	"glepnir/lspsaga.nvim",
+	"nvimdev/lspsaga.nvim",
 	event = "LspAttach",
 	config = function()
 		local saga = require("lspsaga")

@@ -52,6 +52,7 @@ Nmap("<leader>e", ":NvimTreeToggle<CR>", { desc = "[E] Toggle file manager" })
 Nmap("<TAB>", ":bn<CR>", { desc = "Next buffer" })
 Nmap("<S-TAB>", ":bp<CR>", { desc = "Previous buffer" })
 Nmap("<leader>bd", ":bd<CR>", { desc = "Close current buffer" })
+Nmap("<leader>ba", ":%bd<CR>", { desc = "Close all buffers" })
 
 -- navigating between window splits
 Nmap("<C-h>", "<C-\\><C-N><C-w>h", { desc = "Left pane" })
