@@ -11,14 +11,12 @@ return {
         -- If there is no definition, it will instead be hidden
         -- When you use an action in finder like "open vsplit",
         -- you can use <C-t> to jump back
-        -- s - split and i - vsplit
         Nmap("gh", "<cmd>Lspsaga finder<CR>", { desc = "LspSaga finder" })
 
         -- Code action
         Map({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "LspSaga Code Action" })
 
         -- Rename all occurrences of the hovered word for the entire file
-        -- <C-k> to close the rename window
         Nmap("gr", "<cmd>Lspsaga rename<CR>", { desc = "LspSaga rename symbol" })
 
         -- Rename all occurrences of the hovered word for the selected files
@@ -39,10 +37,10 @@ return {
         -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
         -- It also supports tagstack
         -- Use <C-t> to jump back
-        Nmap("gt", "<cmd>Lspsaga peek_type_definition<CR>")
+        Nmap("<leader>gt", "<cmd>Lspsaga peek_type_definition<CR>")
 
         -- Go to type definition
-        -- Nmap("gt", "<cmd>Lspsaga goto_type_definition<CR>")
+        Nmap("gt", "<cmd>Lspsaga goto_type_definition<CR>")
 
         -- Show line diagnostics
         -- You can pass argument ++unfocus to
@@ -62,10 +60,10 @@ return {
         Nmap("]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
         -- Diagnostic jump with filters such as only jumping to an error
-        Nmap("[e", function()
+        Nmap("[D", function()
             require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
         end)
-        Nmap("]e", function()
+        Nmap("]D", function()
             require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
         end)
 
