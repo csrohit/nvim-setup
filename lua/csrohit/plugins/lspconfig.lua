@@ -40,7 +40,7 @@ local on_attach = function(client, bufnr)
     end, { desc = "Format current buffer with LSP" })
 
     -- typescript specific keymaps (e.g. rename file and update imports)
-    if client.name == "tsserver" then
+    if client.name == "ts_ls" then
         Nmap("<leader>rf", ":TypescriptRenameFile<CR>")      -- rename file and update imports
         Nmap("<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
         Nmap("<leader>ru", ":TypescriptRemoveUnused<CR>")    -- remove unused variables (not in youtube nvim video)
@@ -68,7 +68,7 @@ return {
         local mason_lsp = require("mason-lspconfig")
 
         mason_lsp.setup({
-            ensure_installed = { "lua_ls", "clangd", "pyright", "tsserver", "cssls", "html", "emmet_ls" },
+            ensure_installed = { "lua_ls", "clangd", "pyright"},
         })
 
         -- Change the Diagnostic symbols in the sign column (gutter)

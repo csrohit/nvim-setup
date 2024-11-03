@@ -3,7 +3,13 @@
 return {
     'williamboman/mason.nvim',
     dependencies = {},
-    opts = {},
+    opts = {
+        ensure_installed = {
+            "clangd",
+            "clang-format",
+            "codelldb",
+        }
+    },
     config = function()
         require("mason").setup({
             ui = {
@@ -13,6 +19,6 @@ return {
                     package_uninstalled = "✗"
                 }
             }
-        })       -- custom configuration
+        }) -- custom configuration
     end
 }

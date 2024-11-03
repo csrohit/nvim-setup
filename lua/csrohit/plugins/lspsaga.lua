@@ -45,14 +45,14 @@ return {
         -- Show line diagnostics
         -- You can pass argument ++unfocus to
         -- unfocus the show_line_diagnostics floating window
-        Nmap("<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>")
+        -- Nmap("<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>")
 
         -- Show cursor diagnostics
         -- Like show_line_diagnostics, it supports passing the ++unfocus argument
-        Nmap("<leader>dc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
+        -- Nmap("<leader>dc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
 
         -- Show buffer diagnostics
-        Nmap("<leader>db", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+        -- Nmap("<leader>db", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 
         -- Diagnostic jump
         -- You can use <C-o> to jump back to your previous location
